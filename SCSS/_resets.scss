@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    font-family: $main-font;
+    line-height: 1.5;
+    font-size: $font-size-400;
+    background-color: $color-primary;
+    color: $color-secondary;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $accent-font;
+    font-weight: $font-weight-black;
+    color: $color-secondary;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: $main-font;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+svg {
+    display: block;
+}

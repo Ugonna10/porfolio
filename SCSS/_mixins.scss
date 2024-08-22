@@ -1,0 +1,28 @@
+// breakpoints
+$breakpoints: (
+    "small": 640px,
+    "medium": 768px,
+    "large": 1024px,
+    "xlarge": 1280px,
+    "xxlarge": 1440px
+);
+
+@mixin breakpoint($key) {
+    $hasKey: map-has-key($breakpoints, $key);
+
+    @if $hasKey {
+        @media (min-width: map-get($breakpoints, $key)) {
+            @content;
+        }
+    } @else {
+        @warn "The breakpoint `#{$key}` does not exist in the \$breakpoints map.";
+    }
+}
+
+// Custom breakpoint
+@mixin custom-breakpoint ($value){
+    @media (min-width: $value) {
+        @content;
+    }
+}
+

@@ -1,0 +1,27 @@
+// Font families
+$accent-font: "SF UI Display", Serif; // Available weights: 700, 800, 900
+$main-font: "Poppins", Arial, sans-serif; // Available weights: 300 - 900
+
+// Font sizes
+$font-size-400: clamp(1.5rem, calc(1.2rem + 0.5vw), 1.7rem); // base
+$font-size-500: clamp(2rem, calc(1.8rem + 0.45vw), 2.4rem);
+$font-size-600: clamp(4.5rem, calc(3.5rem + 3vw), 7rem);
+$font-size-700: clamp(5.2rem, calc(3.75rem + 4.5vw), 9rem);
+$font-size-800: clamp(6.6rem, calc(4.7rem + 6vw), 12rem);
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+// Colors
+$color-primary: var(--color-primary), #f7f7f7;
+$color-secondary: var(--color-secondary), #000;
+$color-tertiary: var(--color-tertiary), #85c4ff;
+
+// base padding for container
+$container-padding: 1.5rem;
