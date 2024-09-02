@@ -19,9 +19,12 @@ $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
 // Colors
-$color-primary: var(--color-primary), #f7f7f7;
-$color-secondary: var(--color-secondary), #000;
-$color-tertiary: var(--color-tertiary), #85c4ff;
+$color-primary: var(--color-primary, hsl(0, 0%, 97%));
+$color-primary-dark: var(--color-primary-dark,hsl(0, 0%, 67%));
+$color-secondary: var(--color-secondary, hsl(0, 0%, 0%));
+$color-tertiary: var(--color-tertiary, hsl(209, 100%, 76%));
+$color-dropdown: var(--color-dropdown, hsl(0, 0%, 92%));
+
 
 // base padding for container
-$container-padding: 1.5rem;
+$container-padding: 1rem;

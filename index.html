@@ -28,20 +28,113 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS/main.css">
+    <!-- JavaScript -->
+    <script src="JS/main.js" type="module" defer></script>
     <title>Ezeilo Ugonna | Web Developer</title>
 </head>
 <body>
-    <header class="site-">
-        <div class="container">
-            <div class="logo">
-                Ugonna
-                <span class="logo__dot"></span>
-            </div>
-        </div>
+    <!-- Header =================== -->
+    <header class="header">
+        <nav class="header__nav container">
+            <!-- Logo -->
+            <a href="#" class="header__logo">
+                Ugonna<span class="header__logo-dot" aria-hidden="true">.</span>
+            </a>
 
-        
-          
-    </header>header
+            <!-- Hamburger Button -->
+            <button type="button" class="hamburger" aria-label="Toggle menu" aria-controls="headerMenu" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <!-- Backdrop -->
+            <div class="header__backdrop" aria-hidden="true"></div>
+
+            <!-- Menu -->
+            <div class="header__menu" id="headerMenu" aria-hidden="true">
+                <!-- Nav List -->
+                <ul class="header__nav-list" role="menu" aria-label="Main navigation">
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link" role="menuitem">About</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link" role="menuitem">Projects</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Theme Selector -->
+                <div class="header__theme-selector" aria-label="Theme Selector">
+                    <p class="header__theme-label">Theme</p>
+                    <div class="header__dropdown">
+                        <!-- Select -->
+                        <button class="header__select-btn" type="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="header__select-btn-icon-wrapper">
+                                <!-- Theme Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
+                                    viewBox="0 0 256 256">
+                                    <path fill="currentColor"
+                                        d="M208 40H48a24 24 0 0 0-24 24v112a24 24 0 0 0 24 24h72v16H96a8 8 0 0 0 0 16h64a8 8 0 0 0 0-16h-24v-16h72a24 24 0 0 0 24-24V64a24 24 0 0 0-24-24m0 144H48a8 8 0 0 1-8-8v-16h176v16a8 8 0 0 1-8 8" />
+                                </svg>
+                            </span>
+                            <span class="header__select-btn-text">System</span>
+                            <span class="header__select-btn-caret">
+                                <!-- Caret Icon -->
+                                <svg class="caret-svg" xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em"
+                                    viewBox="0 0 448 512" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7L86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                                </svg>
+                            </span>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <ul class="header__dropdown-menu" role="menu">
+                            <li class="header__dropdown-item" role="menuitem">
+                                <span class="header__dropdown-icon-wrapper">
+                                    <!-- Light Mode Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
+                                        viewBox="0 0 256 256">
+                                        <path fill="currentColor"
+                                            d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0m8 24a64 64 0 1 0 64 64a64.07 64.07 0 0 0-64-64m-69.66 5.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32M192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72m5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8m80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8m112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16" />
+                                    </svg>
+                                </span>
+                                <span class="header__dropdown-text">Light</span>
+                            </li>
+                            <li class="header__dropdown-item" role="menuitem">
+                                <span class="header__dropdown-icon-wrapper">
+                                    <!-- Dark Mode Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
+                                        viewBox="0 0 256 256">
+                                        <path fill="currentColor"
+                                            d="M235.54 150.21a104.84 104.84 0 0 1-37 52.91A104 104 0 0 1 32 120a103.1 103.1 0 0 1 20.88-62.52a104.84 104.84 0 0 1 52.91-37a8 8 0 0 1 10 10a88.08 88.08 0 0 0 109.8 109.8a8 8 0 0 1 10 10Z" />
+                                    </svg>
+                                </span>
+                                <span class="header__dropdown-text">Dark</span>
+                            </li>
+                            <li class="header__dropdown-item active" role="menuitem">
+                                <span class="header__dropdown-icon-wrapper">
+                                    <!-- Desktop Mode Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
+                                        viewBox="0 0 256 256">
+                                        <path fill="currentColor"
+                                            d="M208 40H48a24 24 0 0 0-24 24v112a24 24 0 0 0 24 24h72v16H96a8 8 0 0 0 0 16h64a8 8 0 0 0 0-16h-24v-16h72a24 24 0 0 0 24-24V64a24 24 0 0 0-24-24m0 144H48a8 8 0 0 1-8-8v-16h176v16a8 8 0 0 1-8 8" />
+                                    </svg>
+                                </span>
+                                <span class="header__dropdown-text">System</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>

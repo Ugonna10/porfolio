@@ -20,9 +20,26 @@ $breakpoints: (
 }
 
 // Custom breakpoint
-@mixin custom-breakpoint ($value){
+@mixin custom-breakpoint($value) {
     @media (min-width: $value) {
         @content;
     }
 }
 
+// FlexLayout
+@mixin flexLayout($justify: null, $align: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//Dimension
+@mixin dimension($x: null, $y: $x){
+    width: $x;
+    height: $y;
+}
+
+//Transition
+@mixin transition($property: all, $duration: 300ms, $timing-function: linear, $delay: null){
+    transition: $property $duration $timing-function $delay;
+}
