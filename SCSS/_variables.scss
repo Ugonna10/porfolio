@@ -1,5 +1,5 @@
 // Font families
-$accent-font: "SF UI Display", Serif; // Available weights: 700, 800, 900
+$accent-font: "Source code pro", monospace; // Available weights: 600, 700, 900
 $main-font: "Poppins", Arial, sans-serif; // Available weights: 300 - 900
 
 // Font sizes
@@ -27,4 +27,4 @@ $color-dropdown: var(--color-dropdown, hsl(0, 0%, 92%));
 
 
 // base padding for container
-$container-padding: 1rem;
+$container-padding: 2rem;
