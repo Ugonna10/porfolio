@@ -1,0 +1,16 @@
+.project {
+    @include breakpoint ('medium') {
+        .card:nth-of-type(even) {
+            .card__texts {
+                order: -2;
+            }
+        }
+    }
+
+    .link-wrapper {
+        justify-content: flex-end;
+        @include breakpoint("medium") {
+            justify-content: flex-start;
+        }
+    }
+}

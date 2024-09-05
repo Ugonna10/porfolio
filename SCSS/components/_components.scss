@@ -1,6 +1,118 @@
+// cta
 .cta {
     display: inline-block;
     padding: 0.5em 2em;
     border: 2px solid lighten(rgb(76, 76, 76), 1);
-    box-shadow: 3px 3px, 3px 2px 0 black;
+    box-shadow:
+        3px 3px,
+        3px 2px 0 black;
+}
+
+// section header
+.section__header {
+    margin-bottom: 6rem;
+    .section__header-title {
+        font-size: $font-size-500;
+        text-align: center;
+
+        @include breakpoint("medium") {
+            text-align: left;
+        }
+    }
+}
+
+// card
+.cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    
+    @include breakpoint("medium") {
+        row-gap: 4rem;
+    }
+}
+
+.card {
+    background-color: $color-primary-dark;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    @include dimension (100%, auto);
+
+    @include breakpoint("medium") {
+        flex-direction: row;
+        justify-content: space-between;
+        @include dimension (100%, 35rem);
+    }
+
+    @include breakpoint("large") {
+        @include dimension (100%, 35rem);
+    }
+    
+    
+    &__img-wrapper {
+        @include breakpoint("medium") {
+            @include dimension(50%, auto);
+            align-self: center
+        }   
+    }
+
+    &__img {
+        @include dimension(100%, 22rem);
+        object-fit: cover;
+        object-position: left top;
+        border-radius: 2rem;
+        @include breakpoint("medium") {
+            @include dimension(100%, 28rem);
+        }
+    }
+
+    &__texts {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__title {
+        font-family: $accent-font;
+        font-size: $font-size-500;
+        margin-top: 3rem;
+        @include breakpoint("medium") {
+            margin-top: 0;
+        }
+    }
+
+    &__description {
+        margin-block: 3rem 4rem;
+        font-size: $font-size-400;
+        @include breakpoint("medium") {
+            margin-block: 0;
+        }
+    }
+}
+
+// link
+.link-wrapper {
+    display: flex;
+    column-gap: 2rem;
+    .link {
+        background-color: $color-secondary;
+        @include dimension(4.5rem);
+        border-radius: 50%;
+        color: $color-primary;
+        @include flexLayout(center);
+        font-size: $font-size-400;
+        @include transition(#{color, background-color});
+
+        @include breakpoint("large") {
+            @include dimension(5.5rem);
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-secondary;
+        }
+    }
 }
