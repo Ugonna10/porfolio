@@ -2,13 +2,15 @@
     flex-direction: column;
     @include flexLayout(center);
     min-height: calc(80vh - 8rem);
+    margin-bottom: 3rem;
     
     @include breakpoint ('medium'){
         min-height: calc(80vh - 6.6rem);
     }
-
+    
     @include breakpoint ('large'){
         min-height: calc(100vh - 6.6rem);
+        margin-bottom: 1rem;
     }
     
     &__texts {
@@ -30,11 +32,7 @@
     }
 
     &__description {
-        margin-block: 1.5rem;
-        
-        @include breakpoint('medium'){
-            margin-bottom: 2rem;
-        }
+        margin-block: 2rem 3.5rem;
     }
 
     &__description > :first-child {
