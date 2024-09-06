@@ -1,16 +1,37 @@
 .project {
-    @include breakpoint ('medium') {
+    @include breakpoint("medium") {
         .card:nth-of-type(even) {
             .card__texts {
                 order: -2;
             }
         }
     }
-
-    .link-wrapper {
-        justify-content: flex-end;
+    
+    // link
+    .card__links {
+        @include flexLayout(flex-end, null);
+        column-gap: 2rem;
         @include breakpoint("medium") {
             justify-content: flex-start;
+        }
+        
+        .card__link {
+            @include flexLayout(center);
+            @include dimension(4.5rem);
+            background-color: $color-secondary;
+            font-size: $font-size-400;
+            color: $color-primary;
+            border-radius: 50%;
+            @include transition(#{color, background-color});
+
+            @include breakpoint("large") {
+                @include dimension(5.5rem);
+            }
+
+            &:hover {
+                background-color: $color-primary;
+                color: $color-secondary;
+            }
         }
     }
 }
