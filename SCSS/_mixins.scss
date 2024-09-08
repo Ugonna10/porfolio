@@ -43,3 +43,16 @@ $breakpoints: (
 @mixin transition($property: all, $duration: 300ms, $timing-function: linear, $delay: null){
     transition: $property $duration $timing-function $delay;
 }
+
+
+@mixin section-margin-bottom {
+    margin-bottom: 7.5rem;
+
+    @include breakpoint('medium'){
+        margin-bottom: 10rem;
+    }
+
+    @include breakpoint('large'){
+        margin-bottom: 12rem;
+    }
+}

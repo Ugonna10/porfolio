@@ -3,7 +3,7 @@ $accent-font: "Source code pro", monospace; // Available weights: 600, 700, 900
 $main-font: "Poppins", Arial, sans-serif; // Available weights: 300 - 900
 
 // Font sizes
-$font-size-400: clamp(1.5rem, calc(1.2rem + 0.5vw), 1.7rem); // base
+$font-size-400: clamp(1.6rem, calc(1.2rem + 0.5vw), 1.8rem); // base
 $font-size-500: clamp(2rem, calc(1.8rem + 1.5vw), 3.3rem);
 $font-size-600: clamp(4.5rem, calc(3.5rem + 3vw), 7rem);
 $font-size-700: clamp(5.2rem, calc(3.75rem + 4.5vw), 9rem);

@@ -1,4 +1,5 @@
-.project {
+.projects {
+    @include section-margin-bottom;
     @include breakpoint("medium") {
         .card:nth-of-type(even) {
             .card__texts {
@@ -6,15 +7,14 @@
             }
         }
     }
-    
-    // link
+
     .card__links {
         @include flexLayout(flex-end, null);
         column-gap: 2rem;
         @include breakpoint("medium") {
             justify-content: flex-start;
         }
-        
+
         .card__link {
             @include flexLayout(center);
             @include dimension(4.5rem);
