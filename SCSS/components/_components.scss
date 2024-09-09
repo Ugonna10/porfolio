@@ -11,7 +11,7 @@
 // section header
 .section__header {
     margin-bottom: 3rem;
-    .section__header-title {
+    &-title {
         font-size: $font-size-500;
         text-align: center;
 

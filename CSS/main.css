@@ -46,6 +46,7 @@ textarea,
 select,
 button {
   font-family: "Poppins", Arial, sans-serif;
+  border: none;
 }
 
 button {
@@ -76,12 +77,12 @@ h1 {
 .section__header {
   margin-bottom: 3rem;
 }
-.section__header .section__header-title {
+.section__header-title {
   font-size: clamp(2rem, 1.8rem + 1.5vw, 3.3rem);
   text-align: center;
 }
 @media (min-width: 768px) {
-  .section__header .section__header-title {
+  .section__header-title {
     text-align: left;
   }
 }
@@ -602,4 +603,88 @@ h1 {
   align-items: center;
   column-gap: 1rem;
   margin-top: 0.5rem;
+}
+
+.contact {
+  margin-bottom: 7.5rem;
+}
+@media (min-width: 768px) {
+  .contact {
+    margin-bottom: 10rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contact {
+    margin-bottom: 12rem;
+  }
+}
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+@media (min-width: 768px) {
+  .contact__content {
+    margin-top: 9rem;
+    flex-direction: row;
+    column-gap: 15%;
+    justify-content: center;
+  }
+}
+.contact__social-list {
+  display: flex;
+  column-gap: 2rem;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .contact__social-list {
+    flex-direction: column;
+    row-gap: 5rem;
+    margin-inline: 0;
+    margin-top: 1rem;
+  }
+}
+.contact__social-item {
+  font-size: clamp(2rem, 1.8rem + 1.5vw, 3.3rem);
+}
+.contact__form {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  flex-basis: 60%;
+}
+@media (min-width: 768px) {
+  .contact__form {
+    margin-top: 0;
+  }
+}
+.contact__form-element-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.contact__form-input, .contact__form-textarea {
+  padding: 1.5rem;
+  font-size: clamp(1.6rem, 1.2rem + 0.5vw, 1.8rem);
+  background-color: var(--color-primary-dark, hsl(0, 0%, 67%));
+  outline: none;
+  resize: vertical;
+}
+.contact__form-label {
+  font-weight: 600;
+  font-size: clamp(1.8rem, 1.5rem + 0.4vw, 2rem);
+}
+.contact__form-button {
+  padding: 1rem 2rem;
+  align-self: flex-start;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 1.2rem + 0.5vw, 1.8rem);
+}
+@media (min-width: 768px) {
+  .contact__form-button {
+    align-self: flex-end;
+  }
 }
