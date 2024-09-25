@@ -2,11 +2,13 @@
     font-size: clamp(1.8rem, calc(1.5rem + 0.4vw), 2rem);
     font-weight: $font-weight-semi-bold;
     margin-bottom: 0.3rem;
+    color: $color-secondary;
 }
 
 .about {
     @include section-margin-bottom;
     &__content {
+        color: $color-tertiary;
         display: flex;
         flex-direction: column;
         margin-bottom: 6rem;

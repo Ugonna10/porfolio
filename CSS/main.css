@@ -508,6 +508,7 @@ h1 {
   font-size: clamp(1.8rem, 1.5rem + 0.4vw, 2rem);
   font-weight: 600;
   margin-bottom: 0.3rem;
+  color: var(--color-secondary, hsl(0, 0%, 13%));
 }
 
 .about {
@@ -524,6 +525,7 @@ h1 {
   }
 }
 .about__content {
+  color: var(--color-tertiary, hsl(219, 20%, 30%));
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
