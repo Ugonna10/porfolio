@@ -2,6 +2,7 @@
   --color-primary: hsl(0, 0%, 100%);
   --color-secondary: hsl(0, 0%, 13%);
   --color-secondary-light: hsl(0, 0%, 44%);
+  --color-tertiary: hsl(219, 20%, 30%);
   --color-accent-1: hsl(214, 98%, 58%);
   --color-accent-2: hsl(245, 71%, 64%);
 }
@@ -67,9 +68,9 @@ h1 {
   font-weight: 600;
 }
 
-.cta {
+.cta, .projects .card__link {
   display: inline-block;
-  padding: 0.5em 2em;
+  padding: 0.8em 2em;
   background-color: var(--color-secondary, hsl(0, 0%, 13%));
   color: var(--color-primary, hsl(0, 0%, 100%));
 }
@@ -78,89 +79,12 @@ h1 {
   margin-bottom: 3rem;
 }
 .section__header-title {
-  font-size: clamp(2rem, 1.8rem + 1.5vw, 3.3rem);
+  font-size: clamp(4rem, 3.1rem + 3vw, 6rem);
   text-align: center;
 }
 @media (min-width: 768px) {
   .section__header-title {
     text-align: left;
-  }
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-}
-@media (min-width: 768px) {
-  .cards-wrapper {
-    row-gap: 4rem;
-  }
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 2.5rem;
-  padding: 2rem;
-  width: 100%;
-  height: auto;
-}
-@media (min-width: 768px) {
-  .card {
-    flex-direction: row;
-    justify-content: space-between;
-    min-height: 35rem;
-  }
-}
-@media (min-width: 1440px) {
-  .card {
-    padding-inline: 4rem;
-    min-height: 38rem;
-  }
-}
-@media (min-width: 768px) {
-  .card__img-wrapper {
-    width: 50%;
-    height: auto;
-    align-self: center;
-  }
-}
-.card__img {
-  width: 100%;
-  height: 22rem;
-  object-fit: cover;
-  object-position: left top;
-  border-radius: 2rem;
-}
-@media (min-width: 768px) {
-  .card__img {
-    width: 100%;
-    height: 28rem;
-  }
-}
-.card__texts {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  flex-basis: 40%;
-}
-.card__title {
-  font-family: "SF UI Display", serif;
-  font-size: clamp(2rem, 1.8rem + 1.5vw, 3.3rem);
-  margin-top: 3rem;
-}
-@media (min-width: 768px) {
-  .card__title {
-    margin-top: 0;
-  }
-}
-.card__description {
-  margin-block: 3rem 4rem;
-}
-@media (min-width: 768px) {
-  .card__description {
-    margin-block: 0;
   }
 }
 
@@ -200,6 +124,7 @@ h1 {
   padding-block: 2rem;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 .header__nav {
   display: flex;
@@ -444,7 +369,7 @@ h1 {
 }
 .hero__description {
   margin-block: 2rem 3.5rem;
-  color: hsl(219, 20%, 30%);
+  color: var(--color-tertiary, hsl(219, 20%, 30%));
 }
 .hero__description > :first-child {
   margin-bottom: 2rem;
@@ -467,42 +392,116 @@ h1 {
     margin-bottom: 12rem;
   }
 }
+.projects .cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12rem;
+}
+@media (min-width: 768px) {
+  .projects .cards-wrapper {
+    row-gap: 14rem;
+  }
+}
+.projects .card {
+  display: flex;
+  flex-direction: column;
+}
+.projects .card:first-of-type {
+  padding-top: 6rem;
+}
+.projects .card:first-of-type .card__img-wrapper {
+  background-color: hsl(230, 43%, 96%);
+}
+.projects .card:nth-of-type(2) .card__img-wrapper {
+  background-color: hsl(174, 47%, 96%);
+}
+.projects .card:last-of-type .card__img-wrapper {
+  background-color: hsl(230, 43%, 96%);
+}
+@media (min-width: 768px) {
+  .projects .card {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 5rem;
+  }
+}
+.projects .card__img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5rem solid var(--color-primary, hsl(0, 0%, 100%));
+}
+@media (min-width: 768px) {
+  .projects .card__img-wrapper {
+    width: 55%;
+    height: 45rem;
+  }
+}
+.projects .card__img-svg {
+  position: absolute;
+  top: -10%;
+  left: -7%;
+  width: 18rem;
+  height: auto;
+  z-index: -1;
+  color: hsl(0, 0%, 70%);
+}
+@media (min-width: 768px) {
+  .projects .card__img-svg {
+    top: -6%;
+    left: unset;
+    right: -5%;
+  }
+}
+.projects .card__img {
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
+  object-position: left top;
+}
+.projects .card__texts {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .projects .card__texts {
+    row-gap: 5rem;
+    margin-top: 0;
+    width: 45%;
+  }
+}
+.projects .card__link {
+  align-self: flex-start;
+}
+.projects .card__title {
+  font-family: "SF UI Display", serif;
+  font-size: clamp(2rem, 1.8rem + 1.5vw, 3.3rem);
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+}
+.projects .card__description {
+  color: var(--color-tertiary, hsl(219, 20%, 30%));
+}
+.projects .card:nth-of-type(even) .card__img-svg {
+  left: unset;
+  right: -7%;
+}
+@media (min-width: 768px) {
+  .projects .card:nth-of-type(even) .card__img-svg {
+    left: -7%;
+  }
+}
 @media (min-width: 768px) {
   .projects .card:nth-of-type(even) .card__texts {
     order: -2;
   }
-}
-.projects .card__links {
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 2rem;
-}
-@media (min-width: 768px) {
-  .projects .card__links {
-    justify-content: flex-start;
-  }
-}
-.projects .card__links .card__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  background-color: var(--color-secondary, hsl(0, 0%, 13%));
-  font-size: clamp(1.7rem, 1.2rem + 0.5vw, 1.9rem);
-  color: var(--color-primary, hsl(0, 0%, 100%));
-  border-radius: 50%;
-  transition: color, background-color 300ms linear;
-}
-@media (min-width: 1024px) {
-  .projects .card__links .card__link {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
-}
-.projects .card__links .card__link:hover {
-  background-color: var(--color-primary, hsl(0, 0%, 100%));
-  color: var(--color-secondary, hsl(0, 0%, 13%));
 }
 
 .about__experience-title, .about__learning-title, .about__skills-title {

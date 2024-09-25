@@ -5,7 +5,7 @@ $main-font: "Poppins", Arial, sans-serif; // Available weights: 300 - 900
 // Font sizes
 $font-size-400: clamp(1.7rem, calc(1.2rem + 0.5vw), 1.9rem); // base
 $font-size-500: clamp(2rem, calc(1.8rem + 1.5vw), 3.3rem);
-$font-size-600: clamp(4.5rem, calc(3.5rem + 3vw), 7rem);
+$font-size-600: clamp(4rem, calc(3.1rem + 3vw), 6rem);
 $font-size-700: clamp(3.7rem, calc(2.3rem + 4.5vw), 9rem);
 
 // Font Weights
@@ -21,6 +21,7 @@ $font-weight-black: 900;
 $color-primary: var(--color-primary, hsl(0, 0%, 100%));
 $color-secondary: var(--color-secondary, hsl(0, 0%, 13%));
 $color-secondary-light: var(--color-secondary-light, hsl(0, 0%, 44%));
+$color-tertiary: var(--color-tertiary, hsl(219, 20%, 30%));
 $color-accent-1: var(--color-accent-1, hsl(214, 98%, 58%));
 $color-accent-2: var(--color-accent-2, hsl(245, 71%, 64%));
 

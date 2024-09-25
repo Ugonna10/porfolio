@@ -1,36 +1,123 @@
 .projects {
     @include section-margin-bottom;
-    @include breakpoint("medium") {
-        .card:nth-of-type(even) {
-            .card__texts {
-                order: -2;
+
+    // card
+    .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12rem;
+
+        @include breakpoint("medium") {
+            row-gap: 14rem;
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+
+        &:first-of-type {
+            padding-top: 6rem;
+            .card__img-wrapper {
+                background-color: hsl(230, 43%, 96%);
+            }
+        }
+    
+        &:nth-of-type(2) {
+            .card__img-wrapper {
+                background-color: hsl(174, 47%, 96%);
+            }
+        }
+    
+        &:last-of-type {
+            .card__img-wrapper {
+                background-color: hsl(230, 43%, 96%);
+            }
+        }
+
+        @include breakpoint("medium") {
+            flex-direction: row;
+            justify-content: space-between;
+            column-gap: 5rem;
+        }
+
+        &__img-wrapper {
+            position: relative;
+            @include dimension(100%, 30rem);
+            @include flexLayout(center);
+            border: 0.5rem solid $color-primary;
+
+            @include breakpoint("medium") {
+                @include dimension(55%, 45rem);
+            }
+        }
+
+        &__img-svg {
+            position: absolute;
+            top: -10%;
+            left: -7%;
+            @include dimension(18rem, auto);
+            z-index: -1;
+            color: hsl(0, 0%, 70%);
+
+            @include breakpoint("medium") {
+                top: -6%;
+                left: unset;
+                right: -5%;
+            }
+        }
+
+        &__img {
+            @include dimension(80%, 60%);
+            object-fit: cover;
+            object-position: left top;
+        }
+
+        &__texts {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 3rem;
+            padding: 0.5rem;
+            @include breakpoint("medium") {
+                row-gap: 5rem;
+                margin-top: 0;
+                @include dimension(45%, null);
+            }
+        }
+
+        &__link {
+            @extend .cta;
+            align-self: flex-start;
+        }
+
+        &__title {
+            font-family: $accent-font;
+            font-size: $font-size-500;
+            font-weight: $font-weight-black;
+            letter-spacing: 0.2rem;
+            line-height: 1;
+        }
+
+        &__description {
+            color: $color-tertiary;
+        }
+    }
+
+    .card:nth-of-type(even) {
+        .card__img-svg {
+            left: unset;
+            right: -7%;
+            @include breakpoint("medium") {
+                left: -7%;
             }
         }
     }
 
-    .card__links {
-        @include flexLayout(flex-end, null);
-        column-gap: 2rem;
-        @include breakpoint("medium") {
-            justify-content: flex-start;
-        }
-
-        .card__link {
-            @include flexLayout(center);
-            @include dimension(4.5rem);
-            background-color: $color-secondary;
-            font-size: $font-size-400;
-            color: $color-primary;
-            border-radius: 50%;
-            @include transition(#{color, background-color});
-
-            @include breakpoint("large") {
-                @include dimension(5.5rem);
-            }
-
-            &:hover {
-                background-color: $color-primary;
-                color: $color-secondary;
+    @include breakpoint("medium") {
+        .card:nth-of-type(even) {
+            .card__texts {
+                order: -2;
             }
         }
     }

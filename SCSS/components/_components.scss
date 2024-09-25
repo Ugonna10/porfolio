@@ -1,7 +1,7 @@
 // cta
 .cta {
     display: inline-block;
-    padding: 0.5em 2em;
+    padding: 0.8em 2em;
     background-color: $color-secondary;
     color: $color-primary;
 }
@@ -10,80 +10,11 @@
 .section__header {
     margin-bottom: 3rem;
     &-title {
-        font-size: $font-size-500;
+        font-size: $font-size-600;
         text-align: center;
 
         @include breakpoint("medium") {
             text-align: left;
-        }
-    }
-}
-
-// card
-.cards-wrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 3rem;
-
-    @include breakpoint("medium") {
-        row-gap: 4rem;
-    }
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 2.5rem;
-    padding: 2rem;
-    @include dimension(100%, auto);
-
-    @include breakpoint("medium") {
-        flex-direction: row;
-        justify-content: space-between;
-        min-height: 35rem;
-    }
-
-    @include breakpoint("xxlarge") {
-        padding-inline: 4rem;
-        min-height: 38rem;
-    }
-
-    &__img-wrapper {
-        @include breakpoint("medium") {
-            @include dimension(50%, auto);
-            align-self: center;
-        }
-    }
-
-    &__img {
-        @include dimension(100%, 22rem);
-        object-fit: cover;
-        object-position: left top;
-        border-radius: 2rem;
-        @include breakpoint("medium") {
-            @include dimension(100%, 28rem);
-        }
-    }
-
-    &__texts {
-        @include flexLayout(space-around, null);
-        flex-direction: column;
-        flex-basis: 40%;
-    }
-
-    &__title {
-        font-family: $accent-font;
-        font-size: $font-size-500;
-        margin-top: 3rem;
-        @include breakpoint("medium") {
-            margin-top: 0;
-        }
-    }
-
-    &__description {
-        margin-block: 3rem 4rem;
-        @include breakpoint("medium") {
-            margin-block: 0;
         }
     }
 }

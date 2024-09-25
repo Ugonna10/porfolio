@@ -49,7 +49,7 @@
 
     &__description {
         margin-block: 2rem 3.5rem;
-        color: hsl(219, 20%, 30%);
+        color: $color-tertiary;
     }
 
     &__description > :first-child {
