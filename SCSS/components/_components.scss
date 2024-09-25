@@ -2,10 +2,8 @@
 .cta {
     display: inline-block;
     padding: 0.5em 2em;
-    border: 2px solid lighten(rgb(76, 76, 76), 1);
-    box-shadow:
-        3px 3px,
-        3px 2px 0 black;
+    background-color: $color-secondary;
+    color: $color-primary;
 }
 
 // section header
