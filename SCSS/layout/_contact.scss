@@ -1,75 +1,81 @@
 .contact {
     @include section-margin-bottom;
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        margin-top: 5rem;
-        @include breakpoint("medium") {
-            margin-top: 9rem;
-            flex-direction: row;
-            column-gap: 15%;
-            justify-content: center;
+
+    .section__header {
+        &-title {
+            text-align: center;
+        }
+        
+        &-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            @include breakpoint("medium") {
+                font-size: 1.6rem;
+            }
         }
     }
-
-    &__social-list {
-        display: flex;
-        column-gap: 2rem;
-        width: fit-content;
-        margin-inline: auto;
-        margin-bottom: 3rem;
-
-        @include breakpoint("medium") {
-            flex-direction: column;
-            row-gap: 5rem;
-            margin-inline: 0;
-            margin-top: 1rem;
-        }
-    }
-
-    &__social-item {
-        font-size: $font-size-500;
-    }
-
+    
     &__form {
-        margin-top: 5rem;
+        margin-top: 8rem;
         display: flex;
-        flex-direction: column;
-        row-gap: 3rem;
-        flex-basis: 60%;
-
-        @include breakpoint("medium") {
-            margin-top: 0;
-        }
+        flex-wrap: wrap;
+        margin-inline: auto;
+        gap: 3.5rem 10%;
+        max-width: 65rem;
 
         &-element-group {   
             display: flex;
             flex-direction: column;
-            row-gap: 1rem;
+            flex-basis: 100%;
+            @include breakpoint("medium") {
+                &:not(:last-of-type){
+                    flex-basis: 45%;
+                }
+            }
+
+            &:focus-within {
+                label {
+                    color: $color-accent-2;
+                }
+                
+                input, textarea {
+                    border-color: $color-accent-2;
+                    caret-color: $color-accent-2;
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
+            }
         }
 
         &-input,
         &-textarea {
-            padding: 1.5rem;
-            font-size: $font-size-400;
+            @include transition(border-color, 200ms);
+            font-size: 1.5rem;
+            padding-block: 1.2rem;
             outline: none;
             resize: vertical;
+            border-bottom: 0.1rem solid $color-tertiary;
+            color: $color-secondary;
+            &::placeholder {
+                font-size: 1.4rem;
+                @include transition(opacity, 200ms);
+            }
         }
-
+        
         &-label {
-            font-weight: $font-weight-semi-bold;
-            font-size: clamp(1.8rem, calc(1.5rem + 0.4vw), 2rem);
+            color: $color-tertiary;
+            font-weight: $font-weight-medium;
+            font-size: 1.5rem;
+            font-weight: $font-weight-regular;
+            @include transition(color, 200ms);
         }
 
         &-button {
-            padding: 1rem 2rem;
-            align-self: flex-start;
-            font-weight: $font-weight-medium;
-            font-size: $font-size-400;
-            @include breakpoint("medium") {
-                align-self: flex-end;
-            }
+            @extend .cta;
+            padding: 1em 2em;
+            margin-inline: auto;
         }
     }
 }
