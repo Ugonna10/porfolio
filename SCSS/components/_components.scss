@@ -4,6 +4,11 @@
     padding: 0.8em 2em;
     background-color: $color-secondary;
     color: $color-primary;
+    @include transition(background-color);
+
+    &:hover {
+        background-color: $color-accent-2;
+    }
 }
 
 // section header
