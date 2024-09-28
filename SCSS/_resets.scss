@@ -60,3 +60,7 @@ h1 {
     font-family: $accent-font;
     font-weight: $font-weight-semi-bold;
 }
+
+.no-scroll {
+    overflow: hidden;
+}
