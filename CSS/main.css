@@ -109,7 +109,6 @@ h1 {
   top: 0;
   left: 0;
   z-index: 10000;
-  transition: left 500ms linear;
 }
 .loader:after {
   content: " ";
@@ -132,7 +131,7 @@ h1 {
 }
 
 .hide-loader {
-  left: 100%;
+  display: none;
 }
 
 .container {

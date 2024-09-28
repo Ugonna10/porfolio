@@ -6,7 +6,6 @@
     top: 0;
     left: 0;
     z-index: 10000;
-    @include transition(left, 500ms);
 
     &:after {
         content: " ";
@@ -31,5 +30,5 @@
 }
 
 .hide-loader {
-    left: 100%;
+    display: none;
 }
