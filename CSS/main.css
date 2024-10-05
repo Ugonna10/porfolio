@@ -676,11 +676,13 @@ h1 {
 .contact__form-element-group:focus-within label {
   color: var(--color-accent-2, hsl(245, 71%, 64%));
 }
-.contact__form-element-group:focus-within input, .contact__form-element-group:focus-within textarea {
+.contact__form-element-group:focus-within input,
+.contact__form-element-group:focus-within textarea {
   border-color: var(--color-accent-2, hsl(245, 71%, 64%));
   caret-color: var(--color-accent-2, hsl(245, 71%, 64%));
 }
-.contact__form-element-group:focus-within input::placeholder, .contact__form-element-group:focus-within textarea::placeholder {
+.contact__form-element-group:focus-within input::placeholder,
+.contact__form-element-group:focus-within textarea::placeholder {
   opacity: 0;
 }
 .contact__form-input, .contact__form-textarea {
@@ -706,6 +708,73 @@ h1 {
 .contact__form-button {
   padding: 1em 2em;
   margin-inline: auto;
+}
+.contact__submit-status-box {
+  position: fixed;
+  top: 9.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .contact__submit-status-box {
+    top: 10rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contact__submit-status-box {
+    top: 10.5rem;
+    right: 0;
+    left: unset;
+    transform: unset;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__submit-status-box {
+    top: 11rem;
+  }
+}
+@media (min-width: 1440px) {
+  .contact__submit-status-box {
+    top: 11.5rem;
+  }
+}
+.contact__submit-status {
+  width: max-content;
+  padding: 1em 1.5em;
+  font-size: 1.4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 0 15px rgb(204, 204, 204);
+  background-color: var(--color-primary, hsl(0, 0%, 100%));
+  position: relative;
+}
+.contact__submit-status::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.3rem;
+  animation: status 3000ms linear forwards;
+}
+.contact__submit-status.success::after {
+  background-color: green;
+}
+.contact__submit-status.error::after {
+  background-color: red;
+}
+@keyframes status {
+  100% {
+    width: 0;
+  }
 }
 
 .footer__nav {

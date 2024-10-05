@@ -1,12 +1,11 @@
 .contact {
     @include section-margin-bottom;
 
-
     .section__header {
         &-title {
             text-align: center;
         }
-        
+
         &-subtitle {
             text-align: center;
             font-size: 1.4rem;
@@ -15,7 +14,7 @@
             }
         }
     }
-    
+
     &__form {
         margin-top: 8rem;
         display: flex;
@@ -24,12 +23,12 @@
         gap: 3.5rem 10%;
         max-width: 65rem;
 
-        &-element-group {   
+        &-element-group {
             display: flex;
             flex-direction: column;
             flex-basis: 100%;
             @include breakpoint("medium") {
-                &:not(:last-of-type){
+                &:not(:last-of-type) {
                     flex-basis: 45%;
                 }
             }
@@ -38,8 +37,9 @@
                 label {
                     color: $color-accent-2;
                 }
-                
-                input, textarea {
+
+                input,
+                textarea {
                     border-color: $color-accent-2;
                     caret-color: $color-accent-2;
                     &::placeholder {
@@ -63,7 +63,7 @@
                 @include transition(opacity, 200ms);
             }
         }
-        
+
         &-label {
             color: $color-tertiary;
             font-weight: $font-weight-medium;
@@ -76,6 +76,75 @@
             @extend .cta;
             padding: 1em 2em;
             margin-inline: auto;
+        }
+    }
+
+    &__submit-status-box {
+        position: fixed;
+        top: 9.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding: 2rem;
+        overflow: hidden;
+
+        @include breakpoint("medium") {
+            top: 10rem;
+        }
+        
+        @include breakpoint("large") {
+            top: 10.5rem;
+            right: 0;
+            left: unset;
+            transform: unset;
+        }
+
+        @include breakpoint("xlarge") {
+            top: 11rem;
+        }
+
+        @include breakpoint("xxlarge") {
+            top: 11.5rem;
+        }
+    }
+
+    &__submit-status {
+        width: max-content;
+        padding: 1em 1.5em;
+        font-size: 1.4rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        box-shadow: 0 0 15px rgb(204, 204, 204);
+        background-color: $color-primary;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.3rem;
+            animation: status 3000ms linear forwards;
+        }
+
+        &.success::after {
+            background-color: green;
+        }
+
+        &.error::after {
+            background-color: red;
+        }
+
+        @keyframes status {
+            100% {
+                width: 0;
+            }
         }
     }
 }
